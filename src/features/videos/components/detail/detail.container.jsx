@@ -75,8 +75,8 @@ class VideoDetail extends Component {
 
   handleSelectVideo = props => {
     this.setState(props);
-    document.querySelector('.video-detail__video video').load();
-    document.querySelector('.video-detail__video video').play();
+    document.querySelector(".video-detail__video video").load();
+    document.querySelector(".video-detail__video video").play();
   };
 
   render() {

@@ -13,6 +13,7 @@ import {
 } from "./constants";
 import { AuthService, authUrls } from "../../../api";
 import { message } from "antd";
+import qs from "qs";
 const authService = new AuthService();
 
 function decirLogin() {
@@ -30,14 +31,16 @@ const login = (email, password) => dispatch => {
   // Headers
   const config = {
     headers: {
-      "content-Type": "application/json"
+      "content-Type": "application/x-www-form-urlencoded"
     }
   };
   // Request Body
-  //const body = JSON.stringify({ email, password })
+  // const body = JSON.stringify({ email, password })
+  const body = qs.stringify({ email, password });
+  console.log("acaaaaa");
 
   authService
-    .getToken(authUrls.getTokenUrl, config)
+    .getToken(authUrls.getTokenUrl, body, config)
     .then(res => {
       message.success("Bienvenido a Mentoring!!!", 2);
       console.log("data: ", res.data);
