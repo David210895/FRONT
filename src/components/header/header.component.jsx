@@ -150,7 +150,7 @@ class HeaderContainerLogic extends React.Component {
                         {
                             this.props.token ?
                                 (<div class="user user-toggle" ref={this.user} onClick={this.agregar}>
-                                    <div className="usuario"><h2>{(this.props.user.substring(0,1)).toUpperCase()}</h2></div>
+                                    {/* <div className="usuario"><h2>{(this.props.user.substring(0,1)).toUpperCase()}</h2></div> */}
                                     <div class="user-login" id="user-login" ref={this.userLogin}>
                                         <ul>
                                             <li><a href="">Profile</a></li>
