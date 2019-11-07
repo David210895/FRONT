@@ -13,11 +13,17 @@
     border-radius: 8px 8px 0 0;
   }
 
-  h2 {
-    margin-bottom: 10px;
+  &__title {
+    margin-bottom: 5px;
     font-size: 22px;
     color: #ffa821;
     text-shadow: 0px 1px 2px #dedede;
+  }
+
+  &__course {
+    font-size: 12px;
+    color: #d40202;
+    margin-bottom: 10px;
   }
 
   &:hover {

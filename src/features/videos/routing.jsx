@@ -10,7 +10,7 @@ function RoutingVideos(props) {
 
   return (
     <Switch>
-      <Route path={`${path}`} component={VideoDetail} />
+      <PrivateRoute path={`${path}`} component={VideoDetail} />
     </Switch>
   );
 }
