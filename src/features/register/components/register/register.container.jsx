@@ -10,13 +10,7 @@ const { Title } = Typography;
 
 
 class RegisterContainer extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
 
-        }
-
-    }
     render() {
         return (
             <>
@@ -28,20 +22,13 @@ class RegisterContainer extends Component {
                         <div className="login">
                             <Title level={2} className="center">Registro :</Title>
                             <WrappedRegistrationForm />
-
-
                             <div className="center mt-2"><NavLink to="/login">Ya esta registrado ? Loguéese </NavLink></div>
-
                         </div>
-
                     </div>
-
                 </section>
-
             </>
         )
     }
-
 }
 
 export {

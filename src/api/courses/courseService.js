@@ -1,27 +1,28 @@
 import { Service } from '../core/coreService';
 
+
 class CourseService {
-    /* createOrder(url, body) {
-      return Service.post(url, body);
-    }
+  /* createOrder(url, body) {
+    return Service.post(url, body);
+  }
 
-    deleteOrder(id) {
-      return Service.delete(id);
-    }
+  deleteOrder(id) {
+    return Service.delete(id);
+  }
 
-    getOrder(url, config, body) {
-      return Service.post(url, config, body);
-    };
+  getOrder(url, config, body) {
+    return Service.post(url, config, body);
+  };
 
-    updateOrder(url, config, body) {
-      return Service.post(url, config, body);
-    } */
+  updateOrder(url, config, body) {
+    return Service.post(url, config, body);
+  } */
 
-    getAllOrders(url) {
-        return Service.get(url);
-    }
+  getAllCourses(url) {
+    return Service.get(url);
+  }
 }
 
 export {
-    CourseService
+  CourseService
 };

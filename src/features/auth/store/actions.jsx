@@ -16,7 +16,7 @@ import { message} from 'antd';
 const authService = new AuthService();
 
 function decirLogin() {
-    speechSynthesis.speak(new SpeechSynthesisUtterance(`Ingreso exitoso`));
+    speechSynthesis.speak(new SpeechSynthesisUtterance(`bienvenido`));
 }
 function decirLogout() {
     speechSynthesis.speak(new SpeechSynthesisUtterance(`Cerro cesión`));
@@ -27,40 +27,33 @@ function decirError() {
 
 
 // LOGIN USER
-const login = (username, password) => dispatch => {
+const login = (email, password) => dispatch => {
     // Headers
     const config = {
         headers: {
             'content-Type': 'application/json'
         }
     }
-
     // Request Body
-    const body = JSON.stringify({ username, password })
+    //const body = JSON.stringify({ email, password })
 
-    authService.getToken(authUrls.getTokenUrl, body, config)
+    authService.getToken(authUrls.getTokenUrl, body:'email=email&password=password', config)
         .then(res => {
-            /* dispatch(createMessage({ Loggedin: "Bienvenido!" })); */
             message.success('Bienvenido a Mentoring!!!',2);
-            /* console.log({ Loggedin: "Bienvenido a Mentoring!" }) */
+            console.log('data: ',res.data)
             dispatch({
                 type: LOGIN_SUCCESS,
                 payload: res.data
             });
             decirLogin();
-            console.log(res.data);
         }).catch(err => {
             message.error('Verifique sus datos!!!',2);
             dispatch({
                 type: LOGIN_FAILED
             });
             decirError();
-            console.error("El error es el siguiente : ", err.response.data, err.response.status);
         });
 }
-
-
-
 
 
 // LOGOUT USER
@@ -99,8 +92,6 @@ const rememberMe=(user,password)=>(dispatch)=>{
         user,
         password
     }
-    console.log(data);
-    
     dispatch({
         type:REMEMBER_ME,
         payload:data
@@ -122,14 +113,3 @@ export {
     rememberMeClose
 }
 
-
-/* function setLogin(payload) {
-    return {
-        type: SET_LOGIN,
-        payload
-    }
-}
-
-export {
-    setLogin
-} */

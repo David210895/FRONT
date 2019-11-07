@@ -1,0 +1,28 @@
+/* FIXME: Menu Togle animado */
+.toggle {
+    cursor: pointer;
+    display: none;
+  }
+
+  /* FIXME: Cada .bar1,2,3 Representa un div :D */
+.bar1,.bar2,.bar3 {
+    background: #555;
+    width: 45px;
+    height: 5px;
+    margin: 6px 0;
+    transition: 300ms ease;
+    border-radius: 10px;
+  }
+  
+  /* FIXME:  .change Movimiento del togle  */
+  .change .bar1 {
+    transform: rotate(-45deg) translate(-9px ,6px);
+  }
+
+  .change .bar3 {
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+
+  .change .bar2 {
+    opacity: 0;
+  }

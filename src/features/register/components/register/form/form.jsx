@@ -21,28 +21,23 @@ class RegistrationForm extends Component {
         this.state = {
             confirmDirty: false,
             enviar: false,
-
-
             data: {
                 username: '',
                 first_name: '',
                 last_name: '',
                 email: '',
                 password: '',
-                is_superuser: 0
-
+                tipo_usuario: 0,
+                profile:{
+                    experiencia:''
+                }
             }
-
-
-
-
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleChangeChecked = this.handleChangeChecked.bind(this);
     }
     handleChange(e) {
         const { name, value } = e.target;
-        console.log(name, value)
         if (name !== 'password-1') {
             this.setState({
                 data: {
@@ -50,21 +45,14 @@ class RegistrationForm extends Component {
                     [name]: value
                 }
             })
-
         }
-
-        /* console.log(this.state.data) */
-
     }
     handleChangeChecked(e) {
-        const { name, checked } = e.target;
-        console.log(name, checked);
+        const { checked } = e.target;
         this.setState({
             ...this.state,
             enviar: checked
         });
-
-
     }
 
     handleChangeSelect = (value) => {
@@ -72,10 +60,9 @@ class RegistrationForm extends Component {
         this.setState({
             data: {
                 ...this.state.data,
-                is_superuser: value
+                tipo_usuario: value
             }
         });
-        /* console.log(this.state.data) */
     }
     createUser() {
         const { dispatch } = this.props;
@@ -86,20 +73,6 @@ class RegistrationForm extends Component {
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
                 this.createUser();
-               /*  const config = {
-                    headers: {
-                        'content-Type': 'application/json'
-                    }
-                }
-                const body = JSON.stringify(this.state.data)
-
-               
-
-                axios.post(`http://127.0.0.1:8000/serviciosall/registrar/`, body,config)
-                    .then(res => {
-                        console.log(res);
-                        console.log(res.data);
-                    }) */
                 console.log('Validaciones de antd: ', values);
                 console.log('Valores a enviar', this.state.data);
 
@@ -112,19 +85,21 @@ class RegistrationForm extends Component {
                         last_name: '',
                         email: '',
                         password: '',
-                        is_superuser: 0
+                        tipo_usuario: 0,
+                        profile:{
+                            experiencia:'fronteend'
+                        }
                     }
                 });
                 this.props.form.resetFields();
-
             }
         });
     };
 
-    handleConfirmBlur = e => {
-        const { value } = e.target;
-        this.setState({ confirmDirty: this.state.confirmDirty || !!value });
-    };
+    // handleConfirmBlur = e => {
+    //     const { value } = e.target;
+    //     this.setState({ confirmDirty: this.state.confirmDirty || !!value });
+    // };
 
     compareToFirstPassword = (rule, value, callback) => {
         const { form } = this.props;
@@ -148,14 +123,8 @@ class RegistrationForm extends Component {
 
     render() {
         const { getFieldDecorator } = this.props.form;
-        /* console.log(this.state) */
-
-
-
-
         return (
             <Form onSubmit={this.handleSubmit}>
-
                 <Form.Item style={{ marginBottom: '15px' }}>
                     {getFieldDecorator('email', {
                         rules: [
@@ -169,7 +138,6 @@ class RegistrationForm extends Component {
                             },
                         ],
                     })(<Input name="email" onChange={this.handleChange} /* size="large" */
-
                         prefix={<Icon type="contacts" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Ingrese su Email" />)}
                 </Form.Item>
                 <Form.Item style={{ marginBottom: '15px' }}>
@@ -181,7 +149,7 @@ class RegistrationForm extends Component {
                                 message: 'Ingrese su nombre!',
                             },
                         ],
-                    })(<Input name="first_name" onChange={this.handleChange}/* size="large" */
+                    })(<Input name="first_name" onChange={this.handleChange}
 
                         prefix={<Icon type="user-add" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Ingrese su nombre" />)}
                 </Form.Item>
@@ -236,25 +204,12 @@ class RegistrationForm extends Component {
                             </Tooltip>
                         } />)}
                 </Form.Item>
-                <Form.Item /* label="Crear cuenta como :" */ style={{ marginBottom: '0' }}>
-                    {/*  /*{ {getFieldDecorator('terms', {
-                        valuePropName: 'checked',
-                    })( */}
-                    <Select /* defaultValue="0" */ placeholder="Seleccione tipo de cuenta" /* style={{ width: 120 }} */ onChange={this.handleChangeSelect}>
-
+                <Form.Item  style={{ marginBottom: '0' }}>
+                    <Select  placeholder="Seleccione tipo de cuenta" onChange={this.handleChangeSelect}>
                         <Option value="0">Alumno</Option>
                         <Option value="1">Profesor</Option>
-
                     </Select>
-                    {/* /* )} */}
-
-
-
                 </Form.Item>
-
-
-
-
 
                 <Form.Item style={{ marginBottom: '15px' }}>
                     {getFieldDecorator('terms', {

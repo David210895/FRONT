@@ -3,7 +3,7 @@ const userUrls = {
     createClients: '/api/v1/auth/sign-up-clients',
     driverDetails: '/api/v1/dashboard/driver',
     clientDetails: '/api/v1/dashboard/client', */
-    createUsers: '/serviciosall/registrar/',
+    createUsers: '/mentores_apis/api_usuario/',
 }
 
 export {

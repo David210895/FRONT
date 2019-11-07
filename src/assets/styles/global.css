@@ -1,0 +1,91 @@
+/* FIXME: Globals */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f5f5f5;
+}
+
+/* TODO: Layout */
+.container {
+    max-width: 1000px;
+    width: 95%;
+    margin: auto;
+}
+
+/* TODO: Fonts tittle */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Merriweather', serif;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    text-align: justify;
+    line-height: 1.5;
+    font-size: 18px;
+    color: #666;
+}
+
+span {
+    font-size: 18px;
+    color: #444;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+li {
+    list-style: none;
+    font-size: 18px;
+}
+
+/* TODO: buttons */
+
+
+/* FIXME: Display flex ----  */
+
+.d-flex {
+    display: flex;
+}
+.d-flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+.d-flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+.d-flex-evenly {
+    display: flex;
+    justify-content: space-evenly;
+}
+.d-flex-center {
+    display: flex;
+    justify-content: center;
+}
+.d-flex-aling-center{
+    display: flex;
+    align-items: center;
+}
+.d-flex-column {
+    display: flex;
+    flex-direction: column;
+}
+/* TODO: text-center0 */
+.text-center {
+    text-align: center;
+}
+
+
+ 
+ 

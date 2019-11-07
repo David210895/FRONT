@@ -1,4 +1,4 @@
-const mentoringBaseUrl = 'http://127.0.0.1:8000';
+const mentoringBaseUrl = 'https://mentoresapi.herokuapp.com';
 
 export {
     mentoringBaseUrl

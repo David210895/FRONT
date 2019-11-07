@@ -1,7 +1,7 @@
 import { initialState } from './state';
-import { GET_DATA } from "./constants";
+import { GET_DATA_MENTORS } from "./constants";
 
-function allData(state, action) {
+function allMentorsData(state, action) {
     const {
         payload: data
     } = action;
@@ -12,10 +12,10 @@ function allData(state, action) {
 }
 
 
-function HomeReducers(state = initialState, action) {
+function MentorsReducers(state = initialState, action) {
     switch (action.type) {
-        case GET_DATA:
-            return allData(state, action);
+        case GET_DATA_MENTORS:
+            return allMentorsData(state, action);
 
         default:
             return state;
@@ -23,5 +23,5 @@ function HomeReducers(state = initialState, action) {
 }
 
 export {
-    HomeReducers
+    MentorsReducers
 }

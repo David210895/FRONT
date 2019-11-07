@@ -3,7 +3,7 @@ import { Card, Icon } from 'antd';
 const { Meta } = Card;
 const CardComponent = (props) => {
     const { user:{name}, description,experience } = props.data;
-    console.log(props.data)
+    console.log('OBSERVAR:  ',props.data)
 
     return (
 

@@ -1,0 +1,47 @@
+.card-content {
+    position: relative;
+}
+.card {
+    width: 400px;
+    height: 580px;
+    padding: 25px;
+    background: #5a68b1;
+    border-radius: 10px;
+    transition: 300ms ease;
+    overflow: hidden;
+    margin: 20px;
+}
+.card:hover {
+    box-shadow: 4px 4px 4px #555;
+}
+
+.card .card-img {
+    width: 40px;
+    margin: 0 10px;
+}
+.card .mentorname p {
+    color: #333;
+}
+.card .mentorsubtitle {
+    padding: 10px 0;
+}
+.card .card-text-p  p {
+    font-size: 15px;
+    color: #f6f6f6;
+    padding-top: 10px;
+}
+.card .card-text span {
+    color: #ccc;
+    margin-top: 20px;
+}
+.card .img-code {
+    width: 100%;
+    height: 180px;
+}
+
+/* Hover card */
+.card:hover {
+    transform: scale(1.1);
+}
+
+ 

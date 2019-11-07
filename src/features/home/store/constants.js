@@ -1,5 +1,5 @@
-const GET_DATA = "GET_DATA";
+const GET_DATA_MENTORS = "GET_DATA_MENTORS";
 
 export {
-    GET_DATA
+    GET_DATA_MENTORS
 }

@@ -1,0 +1,87 @@
+.topmentor {
+    padding-top: 100px;
+}
+/*  .topmentorcolor {
+     width: 50%;
+     height: 50vh;
+     background-image: url("/img/color2.png");
+ } */
+.topmentor-img {
+    width: 550px;
+     
+}
+.topmentor .topmentor-img h2 {
+    padding-bottom: 30px;
+}
+.topmentor .mentorname {
+    color: rgb(235, 227, 227);
+}
+.topmentor .b-color {
+    width: 550px;
+    height: 500px;
+    
+    /* border-right: 2px solid rgb(170, 170, 170); */
+}
+.topmentor figure {
+    width: 100%;
+}
+.topmentor img {
+    width: 100%;
+    /* padding-right: 30px; */
+}
+.topmentor-wrap {
+    text-align: center;
+}
+.topmentor .topmentor-wrap-content {
+    width: 98%;
+    display: flex;
+    justify-content: center;
+}
+
+/* TODO: Card */
+ 
+/* TODO: Color */
+ 
+
+/* Topmentor  */
+.lenguajes {
+    padding-top: 10px;
+}
+.lenguajes ul li {
+    color: #f6f6f6;
+    font-size: 14px;
+    margin: 0 3px;
+    padding: 3px;
+    cursor: pointer;
+    background: #38468b;
+    border-radius: 3px;
+    transition: 300ms ease;
+}
+
+.lenguajes ul li:hover {
+    background: #222e6b;  
+}
+
+/* Button topmentor */
+.lenguajes-btn a {
+    background: #eb4746;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.lenguajes-btn .fa-arrow-right {
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.lenguajes-btn a:hover {
+    background: #c22f2f;
+}
+
+.lenguajes-btn {
+    padding-top: 20px;
+    
+}
+
+
+ 

@@ -3,7 +3,7 @@ const authUrls = {
     getTokenUrl: '/api/v1/auth/sign-in',
     logout: '/api/v1/auth/sign-out', */
 
-    getTokenUrl: '/serviciosall/login/',
+    getTokenUrl: 'mentores_apis/autenticar_usuario/',
     logout: '/serviciosall/logout/'
 }
 

@@ -1,35 +1,30 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-function PrivateRoute({ component: Component, auth, ...rest }) {
-  return (
-    <Route
-      {...rest}
-      /* render={props =>
-        (sessionStorage.getItem('token')) ? (
-          <Component {...props} />
-        ) : (
-            <Redirect
-            to={{
-              pathname: "/login"
-            }}
-          />
-        )
-      } */
-
-      render={props => {
-        if (auth.isLoading) {
-          return <h2>Loading...</h2>;
-        } else if (!auth.isAuthenticated) {
-          return <Redirect to="/login" />
-        } else {
-          return <Component {...props} />
-        }
-      }}
-    />
-  )
+// function PrivateRoute({ component: Component, auth, ...rest }) {
+//   return (
+//     <Route
+//       {...rest}
+//       render={props => {
+//         if (auth.isLoading) {
+//           return <h2>Loading...</h2>;
+//         } else if (auth.isAuthenticated) {
+//           return <Redirect to="/home" />
+//         } else {
+//           return <Component {...props} />
+//         }
+//       }}
+//     />
+//   )
+// }
+const PrivateRoute = ({ component:Component, ...rest }) => {
+  const userLogged = localStorage.getItem('token');
+  console.log('userLogued',userLogged);
+  if ( !userLogged ){
+      return <Redirect to="/login" />
+  }
+  return <Route {...rest} component = { Component } />
 }
-
 const mapStateToProps = state => ({
   auth: state.Auth
 });

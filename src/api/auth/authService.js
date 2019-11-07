@@ -13,8 +13,6 @@ class AuthService {
     return Service.get(url,body,config)
   };
  */
-
-
     getToken(url, body, config) {
         return Service.post(url, body, config);
     };
@@ -22,7 +20,6 @@ class AuthService {
     logout(url, body, config) {
         return Service.get(url, body, config)
     };
-
 }
 
 export {

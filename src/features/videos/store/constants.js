@@ -1,0 +1,5 @@
+const GET_DATA_COURSES = "GET_DATA_COURSES";
+
+export {
+    GET_DATA_COURSES
+}

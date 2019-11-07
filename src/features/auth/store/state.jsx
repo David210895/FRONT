@@ -10,6 +10,7 @@ const initialState = {
     token: localStorage.getItem('token'),
     isAuthenticated: null,
     username: null,
+    email:null,
     isLoading: false,
     user:localStorage.getItem('user'),
     password:localStorage.getItem('password')

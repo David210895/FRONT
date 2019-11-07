@@ -19,6 +19,7 @@ function AuthReducer(state = initialState, action) {
     switch (action.type) {
         case LOGIN_SUCCESS:
             localStorage.setItem('token', action.payload.token);
+            console.log('token devulto: ',action.payload)
             return Object.assign({}, state, {
                 token: action.payload.token,
                 isAuthenticated: true,
@@ -26,17 +27,15 @@ function AuthReducer(state = initialState, action) {
             });
         case REMEMBER_ME:
             localStorage.setItem('user', action.payload.user);
-            localStorage.setItem('password', action.payload.user);
+            localStorage.setItem('password', action.payload.password);
             return {
-                ...state,
                 user: action.payload.user,
-                password: action.payload.user
+                password: action.payload.password
             }
         case REMEMBER_ME_CLOSE:
             localStorage.removeItem('user');
             localStorage.removeItem('password');
             return {
-                ...state,
                 user: null,
                 password: null
             }
@@ -57,22 +56,6 @@ function AuthReducer(state = initialState, action) {
 
     }
 }
-
-/* function AuthReducer(state = initialState, action = {}) {
-    switch (action.type) {
-        case SET_LOGIN:
-            return Object.assign({}, state, {
-                login: true,
-                token: action.payload.token,
-                user: action.payload.user
-            });
-        default:
-            return state;
-    }
-} */
-
-
-
 
 
 export {

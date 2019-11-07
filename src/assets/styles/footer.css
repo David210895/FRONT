@@ -1,0 +1,71 @@
+footer {
+    background: #2d3979;
+    padding: 20px 0;
+    color: #777;
+}
+
+.footer-logo {
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+.footer-about {
+    width: 300px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+.footer-about h3{
+    padding-bottom: 10px;
+}
+.footer-about p {
+    font-size: 16px;
+    color: #f8f8f8;
+}
+.footer-contact-content h3 {
+    padding-bottom: 10px;
+}
+.footer-contact-content p {
+    color: #f8f8f8;
+    font-size: 16px;
+    padding-bottom: 10px;
+}
+.footer-contact-content .fa-phone,.fa-envelope-open-text {
+    color: #eb4746;
+    padding-right: 10px;
+}
+.footer-information {
+    padding-right: 20px;
+}
+
+.footer-help {
+    padding-left: 20px;
+}   
+.footer-help a {
+    font-size: 16px;
+}
+.footer-help ul li {
+    margin: 5px;
+}
+.information a {
+    font-size: 16px;
+}
+.information ul li {
+    margin: 5px;
+}
+.footer-up .fa-arrow-up {
+    background: #eb4746;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* TODO: social icon */
+ .footer-wrap-icons {
+    border-top: 2px solid #ccc;
+    padding: 10px 0;
+ }
+
+.icons-social .social {
+    margin: 0 5px;
+    color: #f8f8f8;
+    font-size: 18px;
+}

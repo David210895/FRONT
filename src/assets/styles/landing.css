@@ -1,0 +1,84 @@
+/* @import './global.css'; */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.landing {
+    width: 100%;
+    height: 80vh;
+    padding-top: 9rem;
+    background-image: url("../images/color.png");
+    background-repeat: no-repeat;
+    margin-top: -70px;
+    margin-left: -2px;
+}
+ 
+
+.landing h1 {
+    font-size: 40px;
+    color: #ccc;
+}
+.landing .landing-text {
+    width: 30%;
+    padding-right: 50px;
+}
+
+.landing .landing-text p {
+    color: #ccc;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.landing-btn {
+    background: #eb4746;
+    overflow: hidden;
+}
+.landing .btn-color {
+    color: #f6f6f6;
+    background: none;
+    text-decoration: underline;
+}
+
+/* .btn .btn-color {
+     color: rgb(102, 78, 139);
+    background: none;
+    text-decoration: underline;
+} */
+.wrap-landing .landing-img img {
+    width: 670px;
+}
+
+/* TODO: icon right */
+
+.landing .fa-arrow-right {
+    margin: 0 5px;
+    transform: translateX(5px);
+    transition: 0.3s ease;
+}
+.landing-btn:hover .fa-arrow-right{
+    transform: translateX(50px);
+}
+
+/*  */
+/* .animation {
+    margin-top: 80px;
+} */
+.animation .fa-angle-double-down {
+    color: #5a68b1;
+    font-size: 50px;
+    animation: down 3s linear infinite;
+    cursor: pointer;
+    margin: -5px;
+}
+ 
+@keyframes down {
+    100% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    0% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+}
+ 

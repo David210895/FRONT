@@ -1,0 +1,38 @@
+ 
+.mentor .mentor-text{ 
+    width: 30%;
+    padding-right: 50px;
+}
+.mentor .mentor-text h3 {
+    padding-top: 10px;
+}
+.mentor .mentor-text p {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.mentoring-img img {
+    width: 700px;
+}
+.mentorimg {
+    position: relative;
+}
+.mentor .mentorcolor {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../images/color2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.mentor {
+    overflow: hidden;
+}
+
+.mentor .fa-arrow-right {
+    margin: 0 5px;
+    transform: translateX(5px);
+    transition: 0.3s ease;
+}
+.btn:hover .fa-arrow-right{
+    transform: translateX(50px);
+}

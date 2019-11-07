@@ -1,0 +1,75 @@
+.profilementor {
+    width: 95%;
+    border-radius: 10px;
+    padding: 20px;
+    background: #5a68b1;
+    box-shadow: 5px 5px 5px rgb(161, 161, 161);
+}
+.profile-wrap figure {
+    text-align: center;
+}
+.profilementor .profile-wrap figure .face {
+    width: 100px;
+}
+.profilementor  p {
+    padding: 10px 0;
+    color: #f6f6f6;
+}
+.profilementor .card-btn {
+    padding: 20px 0;
+}
+.profilementor .stars {
+    padding-top: 10px;
+}
+.profilementor .card-btn button {
+    background: #eb4746;
+}
+/* TODO: skills mentor */
+.profile-skills-mentor p {
+    width: 100px;
+}
+.profile-wrap .face {
+    padding-bottom: 10px;
+}
+.profile-skills-mentor .barra {
+    width: 80%;
+    height: 30px;
+    background: rgb(138, 138, 138);
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.profile-skills-mentor .barra .relleno {
+    width: 70%;
+    height: 30px;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.profilementor .rate {
+    padding-right: 80px;
+}
+.profilementor .rate span {
+    font-size: 30px;
+}
+.profile-content {
+    padding-top: 30px;
+}
+ .profile-skills-mentor {
+     padding-top: 20px;
+ }
+
+ 
+/* TODO: stars */
+
+.stars .fa-star ,.fa-star-half-alt {
+    margin: 0 5px;
+    font-size: 20px;
+    color: #f6f6f6;
+}
+
+/* TODO: mame */
+
+ 
+
+ 

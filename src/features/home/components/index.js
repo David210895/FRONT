@@ -1,5 +1,5 @@
-import { HomeContainer } from "./home/home.container";
+import { Home } from "./home/home.container";
 
 export {
-    HomeContainer
+    Home
 }

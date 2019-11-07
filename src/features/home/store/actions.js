@@ -1,29 +1,27 @@
 import {
-    GET_DATA
+    GET_DATA_MENTORS
 } from "./constants";
 
 import {
-    CourseService,
-    coursesUrls
+    mentorsUrls,
+    MentorService
 } from '../../../api';
 
-const _courseService = new CourseService();
+const mentorService = new MentorService();
 
 
 // GET COURSES
-const getOrdersAll = () => dispatch => {
-
-    _courseService.getAllOrders(coursesUrls.listCourses)
+const getMentorsAll = () => dispatch => {
+    mentorService.getAllMentors(mentorsUrls.listMentors)
         .then(res => {
-            /* console.log(res.data.data); */
             dispatch({
-                type: GET_DATA,
+                type: GET_DATA_MENTORS,
                 payload: res.data
             });
         }).catch(err => {
-            console.log(err)
+           // console.log(err)
         });
 }
 export {
-    getOrdersAll
+    getMentorsAll
 }

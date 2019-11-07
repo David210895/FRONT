@@ -5,11 +5,12 @@ import { connect } from 'react-redux';
 import { login, rememberMe, rememberMeClose } from '../../../store/actions';
 /* import { setLogin } from '../../../store/actions'; */
 import { Redirect } from 'react-router-dom';
+
 class LoginForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            user: localStorage.getItem('user'),
+            email: localStorage.getItem('email'),
             password: localStorage.getItem('password'),
             remember: localStorage.getItem('user') && localStorage.getItem('password') ? true : false
         }
@@ -21,14 +22,12 @@ class LoginForm extends Component {
 
     handleChangeInput(e) {
         const { name, value } = e.target;
-        console.log(name, value);
         this.setState({
             [name]: value
         })
     }
     handleChecked(e) {
         const { name, checked } = e.target;
-        console.log(name, checked);
         this.setState({
             [name]: checked
         })
@@ -37,30 +36,25 @@ class LoginForm extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        console.log('Antes de ENVIAR DATOS validos en el  submit del login ', this.props)
+        // console.log('Antes de ENVIAR DATOS validos en el  submit del login ', this.props)
+        console.log('datos enviados: ',this.state.email)
+        console.log('datos enviados: ',this.state.password)
         this.props.form.validateFields((err, values) => {
             if (!err) {
-                console.log('Valores del state :', this.state);
-                console.log('Valores recibidos del form: ', values);
-                /* this.props.history.push('home'); */
-                /* sessionStorage.setItem('token', 123456) */
-                this.props.login(this.state.user, this.state.password);
+                this.props.login(this.state.email, this.state.password);
                 if (this.state.remember) {
-                    this.handleRemember(this.state.user, this.state.password);
+                    this.handleRemember(this.state.email, this.state.password);
+                    // window.location('/home');
                 } else {
                     this.props.rememberMeClose();
                 }
-
-
             }
         });
     }
-    componentDidMount() {
-        console.log(this.props);
-        console.log(this.state);
-
-        /* sessionStorage.clear(); */
-    }
+    // componentDidMount() {
+    //     console.log(this.props);
+    //     console.log(this.state);
+    // }
     handleRemember(user, password) {
         this.props.rememberMe(user, password);
     }
@@ -88,7 +82,7 @@ class LoginForm extends Component {
                     })(
                         <Input size="large"
                             prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                            placeholder="Ingrese su usuario" name="user" onChange={this.handleChangeInput}
+                            placeholder="Ingrese su usuario" name="email" onChange={this.handleChangeInput}
                         />,
                     )}
                 </Form.Item>
@@ -111,10 +105,10 @@ class LoginForm extends Component {
                     })(<Checkbox name="remember" onChange={this.handleChecked}>Recuérdame</Checkbox>)}
                     <a className="login-form-forgot" style={{ float: 'right' }} href="">
                         Se te olvidó tu contraseña
-          </a>
+                    </a>
                     <Button block type="primary" htmlType="submit" size="large">
                         Login
-          </Button>
+                    </Button>
 
                 </Form.Item>
             </Form>
@@ -127,7 +121,11 @@ const mapStateToProps = state => ({
 });
 
 /* const mapDispatchToProps = { setLogin } */
-const mapDispatchToProps = { login, rememberMe, rememberMeClose }
+const mapDispatchToProps = { 
+    login, 
+    rememberMe, 
+    rememberMeClose 
+}
 
 const WrappedLoginForm = Form.create({ name: 'login_form' })(LoginForm);
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(WrappedLoginForm));

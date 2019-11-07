@@ -1,0 +1,20 @@
+.suggestions{
+    box-sizing: none;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 15%;
+    background:#3c4245;
+    color:white;
+    & li{
+        padding: 5px;
+        font-size: 15px;
+        text-align: center;
+        border: white 1px;
+    }
+    border-radius: 10px;
+}
+
+.entrada{
+    position:relative;
+}
