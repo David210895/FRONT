@@ -13,6 +13,9 @@ import {
 } from "./constants";
 import { AuthService, authUrls } from "../../../api";
 import { message} from 'antd';
+
+// import formurlencoded from 'form-urlencoded';
+
 const authService = new AuthService();
 
 function decirLogin() {
@@ -25,22 +28,29 @@ function decirError() {
     speechSynthesis.speak(new SpeechSynthesisUtterance("Verifique sus datos"));
 }
 
-
+const encodeFormData = (data) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+        .join('&');
+}
 // LOGIN USER
 const login = (email, password) => dispatch => {
     // Headers
     const config = {
         headers: {
-            'content-Type': 'application/json'
+            'Content-Type': 'application/x-www-form-url-encoded', 
+            'Accept': 'application/json'
         }
     }
     // Request Body
     //const body = JSON.stringify({ email, password })
-
-    authService.getToken(authUrls.getTokenUrl, body:'email=email&password=password', config)
+    const body =  encodeFormData({ email, password })
+    console.log('funciona: ',body)
+    authService.getToken(authUrls.getTokenUrl, body, config)
         .then(res => {
+
             message.success('Bienvenido a Mentoring!!!',2);
-            console.log('data: ',res.data)
+
             dispatch({
                 type: LOGIN_SUCCESS,
                 payload: res.data
